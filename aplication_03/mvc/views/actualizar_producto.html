@@ -1,0 +1,26 @@
+$def with (producto)
+
+<h1 class="titulo">Actualizar Producto $producto.nombre</h1>
+<div class="container">    
+    <form method="post" class="form">
+
+        <input type="hidden" name="id_producto" value=$producto.id_producto>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value=$producto.nombre class="form-control"><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" name="descripcion" value=$producto.descripcion class="form-control"><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" value=$producto.precio class="form-control"><br>    
+
+        <label for="existencias">Existencias:</label>
+        <input type="number" name="existencias" value=$producto.existencias class="form-control"><br>
+
+            <button type="submit" class="form-control btn btn-primary">Actualizar</button>
+            <br>
+            <br>    
+            <a href="/" class="form-control btn btn-secondary">Cancelar</a>
+    </form>
+</div>

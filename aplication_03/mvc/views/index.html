@@ -1,0 +1,39 @@
+$def with(datos)
+
+<div class="container">
+    <h1>Productos</h1>
+
+    <!-- Contenedor para el botón "Insertar" y el formulario de búsqueda -->
+    <div class="d-flex justify-content-between mb-3">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/insertar'">Insertar</button>
+
+        <!-- Formulario de búsqueda -->
+        <form method="post" class="d-flex">
+            <input type="text" name="query" class="form-control" placeholder="Buscar producto">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Existencias</th>
+            <th>Opciones</th>
+        </tr>
+        $for producto in datos:
+            <tr>
+                <td>$producto[1]</td>
+                <td>$producto[2]</td>
+                <td>$producto[3]</td>
+                <td>$producto[4]</td>
+                <td>
+                    <!-- Modificando los enlaces para utilizar query parameters -->
+                    <a href="/detalle?producto_id=$producto[0]" class="btn btn-primary">Detalle</a>
+                    <a href="/actualizar?producto_id=$producto[0]" class="btn btn-primary">Editar</a>
+                    <a href="/borrar?producto_id=$producto[0]" class="btn btn-primary">Borrar</a>
+                </td>
+            </tr>
+    </table>
+</div>

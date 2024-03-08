@@ -1,0 +1,14 @@
+$def with(datos, num1, num2)
+
+<h1>Calculadora</h1>
+<form method="post">
+    <label for="num1">Ingresa un numero</label>
+    <input type="text" id="num1" name="num1" value=$num1><br>
+    
+    <label for="num2">Ingresa un numero</label>
+    <input type="text" id="num2" name="num2" value=$num2><br>
+
+    <label for="resultado">Resultado:</label>
+    <span id="resultado">$datos</span><br>
+    <button type="submit">Calcular</button>
+</form>

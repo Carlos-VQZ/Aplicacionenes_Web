@@ -1,0 +1,40 @@
+$def with (producto)
+
+<div class="container">
+    <form id="borrarForm" method="POST" action="/borrar" class="form">
+
+        <h1 class="titulo">Borrar Producto $producto.nombre</h1>
+        <h3>¿Estás seguro que deseas borrar el siguiente producto?</h3>
+
+        <label for="id_producto">ID de Producto:</label>
+        <input type="text" value="$producto.id_producto" class="form-control" readonly><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" value="$producto.nombre" class="form-control" readonly><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" value="$producto.descripcion" readonly class="form-control"><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" value="$producto.precio" readonly class="form-control"><br>
+
+        <label for="existencias">Existencias:</label>
+        <input type="number" value="$producto.existencias" readonly class="form-control"><br>
+
+        <input type="hidden" name="id_producto" value=$producto.id_producto>
+        
+        <button type="button" class="form-control btn btn-danger" onclick="confirmarBorrado()">Borrar</button>
+        <br>
+        <br>
+        <a href="/" class="form-control btn btn-secondary">Cancelar</a>
+    </form>
+
+    <script>
+        function confirmarBorrado() {
+            var confirmacion = confirm("¿Estás seguro que deseas borrar este producto?");
+            if (confirmacion) {
+                document.getElementById("borrarForm").submit();
+            }
+        }
+    </script>
+</div>

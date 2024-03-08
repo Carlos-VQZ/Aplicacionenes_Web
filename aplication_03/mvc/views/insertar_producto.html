@@ -1,0 +1,26 @@
+$def with()
+<div class="container">
+    <h1>Insertar Producto</h1>
+
+    <form action="/insertar" method="post">
+        <label for="nombre">Nombre:</label>
+        <input class="form-control" type="text" name="nombre" required><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea class="form-control" name="descripcion" required></textarea><br>
+
+        <label for="precio">Precio:</label>
+        <input class="form-control" type="text" name="precio" required><br>
+
+        <label for="existencias">Existencias:</label>
+        <input class="form-control" type="text" name="existencias" required><br>
+
+        <input class="form-control btn btn-primary" type="submit" value="Insertar">
+        <br>
+        <br>
+        <a href="/" class="form-control btn btn-secondary">Cancelar</a>
+    </form> 
+        
+
+
+</div>
