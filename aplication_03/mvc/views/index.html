@@ -1,19 +1,16 @@
-$def with(datos)
+$def with(datos, page, total_pages)
 
 <div class="container">
     <h1>Productos</h1>
 
-    <!-- Contenedor para el botón "Insertar" y el formulario de búsqueda -->
     <div class="d-flex justify-content-between mb-3">
         <button type="button" class="btn btn-primary" onclick="window.location.href='/insertar'">Insertar</button>
 
-        <!-- Formulario de búsqueda -->
         <form method="post" class="d-flex">
             <input type="text" name="query" class="form-control" placeholder="Buscar producto">
             <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
     </div>
-
     <table class="table">
         <tr>
             <th>Nombre</th>
@@ -22,6 +19,7 @@ $def with(datos)
             <th>Existencias</th>
             <th>Opciones</th>
         </tr>
+
         $for producto in datos:
             <tr>
                 <td>$producto[1]</td>
@@ -29,11 +27,26 @@ $def with(datos)
                 <td>$producto[3]</td>
                 <td>$producto[4]</td>
                 <td>
-                    <!-- Modificando los enlaces para utilizar query parameters -->
                     <a href="/detalle?producto_id=$producto[0]" class="btn btn-primary">Detalle</a>
                     <a href="/actualizar?producto_id=$producto[0]" class="btn btn-primary">Editar</a>
                     <a href="/borrar?producto_id=$producto[0]" class="btn btn-primary">Borrar</a>
                 </td>
             </tr>
+        </for>
     </table>
+    <div class="pagination justify-content-center">
+        $if page > 1:
+            <a href="?page=1" class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span> <!-- Flecha hacia la primera página -->
+            </a>
+        $for i in range(1, total_pages + 1):
+            <a href="?page=$i" class="page-link">$i</a>
+        $if page < total_pages:
+            <a href="?page=$total_pages" class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span> <!-- Flecha hacia la última página -->
+            </a>
+    </div>
+    
+    
 </div>
+

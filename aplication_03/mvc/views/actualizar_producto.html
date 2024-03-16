@@ -1,8 +1,8 @@
-$def with (producto)
+$def with(producto)
 
 <h1 class="titulo">Actualizar Producto $producto.nombre</h1>
 <div class="container">    
-    <form method="post" class="form">
+    <form method="post" class="form" enctype="multipart/form-data">
 
         <input type="hidden" name="id_producto" value=$producto.id_producto>
 
@@ -18,9 +18,18 @@ $def with (producto)
         <label for="existencias">Existencias:</label>
         <input type="number" name="existencias" value=$producto.existencias class="form-control"><br>
 
-            <button type="submit" class="form-control btn btn-primary">Actualizar</button>
-            <br>
-            <br>    
-            <a href="/" class="form-control btn btn-secondary">Cancelar</a>
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" class="form-control"><br>
+
+        <div class="d-flex justify-content-center">
+            <img src="data:image/jpeg;base64,$producto.imagen_base64" alt="Imagen del Producto" style="max-width: 200px; max-height: 200px;">
+        </div>
+        <br>
+        <br>
+        
+        <button type="submit" class="form-control btn btn-primary">Actualizar</button>
+        <br>
+        <br>    
+        <a href="/" class="form-control btn btn-secondary">Cancelar</a>
     </form>
 </div>

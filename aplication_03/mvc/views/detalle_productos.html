@@ -1,24 +1,26 @@
 $def with(producto)
 
 <div class="container">
-<h1>Detalles del Producto</h1>
-<table class="table">
-    <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Existencias</th>
-    </tr>
-    <tr>
-        <td>$producto.nombre</td>
-        <td>$producto.descripcion</td>
-        <td>$producto.precio</td>
-        <td>$producto.existencias</td>
-    </tr>
-</table>
-<div class="container text-center">
-    <br>
-    <br>
-    <a href="/" class="btn btn-secondary">Cancelar</a>
+    <h1>Detalles del Producto</h1>
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Existencias</th>
+            <th>Imagen</th>
+        </tr>
+        <tr>
+            <td>$producto.nombre</td>
+            <td>$producto.descripcion</td>
+            <td>$producto.precio</td>
+            <td>$producto.existencias</td>
+            <td><img src="data:image/jpeg;base64,$producto.imagen_base64" alt="Imagen del Producto" style="max-width: 200px; max-height: 200px;"></td>
+        </tr>
+    </table>
+    <div class="container text-center">
+        <br>
+        <br>
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    </div>
 </div>
-</div>  

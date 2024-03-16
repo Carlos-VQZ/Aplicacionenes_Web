@@ -1,12 +1,13 @@
 import sqlite3
 
 class Producto:
-    def __init__(self, id_producto, nombre, descripcion, precio, existencias):
+    def __init__(self, id_producto, nombre, descripcion, precio, existencias, imagen_base64):
         self.id_producto = id_producto
         self.nombre = nombre
         self.descripcion = descripcion
         self.precio = precio
         self.existencias = existencias
+        self.imagen_base64 = imagen_base64
 
 class ModeloBorrar:
     def __init__(self):

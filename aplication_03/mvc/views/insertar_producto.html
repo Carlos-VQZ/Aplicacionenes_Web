@@ -2,7 +2,7 @@ $def with()
 <div class="container">
     <h1>Insertar Producto</h1>
 
-    <form action="/insertar" method="post">
+    <form action="/insertar" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre:</label>
         <input class="form-control" type="text" name="nombre" required><br>
 
@@ -15,12 +15,12 @@ $def with()
         <label for="existencias">Existencias:</label>
         <input class="form-control" type="text" name="existencias" required><br>
 
+        <label for="imagen">Imagen:</label>
+        <input class="form-control" type="file" name="imagen" accept="image/*" required><br>
+
         <input class="form-control btn btn-primary" type="submit" value="Insertar">
         <br>
         <br>
         <a href="/" class="form-control btn btn-secondary">Cancelar</a>
-    </form> 
-        
-
-
+    </form>
 </div>

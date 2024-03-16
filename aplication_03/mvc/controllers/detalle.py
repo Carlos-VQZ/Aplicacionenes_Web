@@ -1,5 +1,5 @@
 import web
-from mvc.models.modelo_detalle import ModeloDetalle  # Asegúrate de importar correctamente
+from mvc.models.modelo_detalle import ModeloDetalle
 
 render = web.template.render('mvc/views/', base="layout")
 
